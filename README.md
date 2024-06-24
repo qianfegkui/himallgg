@@ -1,5 +1,3 @@
-上传 newdata.pkl
-
 # Dependencies
 python==3.8.16
 torch==1.12.0
@@ -9,7 +7,7 @@ torch-geometric==2.3.0
 # IEMOCAP
 ## Preparing datasets for training
 
-    python preprocess_roberta.py --data './data/iemocap/newdata.pkl' --dataset="iemocap"
+    python preprocess.py --data './data/iemocap/newdata.pkl' --dataset="iemocap"
 
 ## Training networks 
 
@@ -17,9 +15,9 @@ torch-geometric==2.3.0
 
 ## Performance Comparision
 
--|Dataset|Weighted F1
+-|Dataset|Weighted F1(w) | Acc
 :-:|:-:|:-:
-Original|IEMOCAP|70.20%
+Original|IEMOCAP|70.22% | 70.12%
 
 # MELD
 
@@ -33,9 +31,9 @@ Original|IEMOCAP|70.20%
 
 ## Performance Comparision
 
--|Dataset|Weighted F1
+-|Dataset|Weighted F1(w) | Acc
 :-:|:-:|:-:
-Original|MELD|65.18%
+Original|MELD|65.18% | 66.21%
 
 
 
