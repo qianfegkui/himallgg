@@ -1,8 +1,7 @@
 # Dependencies
 python==3.8.16
-torch==1.12.0
+torch==1.12.0+cu116
 torch-geometric==2.3.0
-
 
 # IEMOCAP
 ## Preparing datasets for training
@@ -11,7 +10,12 @@ torch-geometric==2.3.0
 
 ## Training networks 
 
-    python train.py --wf -10 --wp -10 --data './data/iemocap/newdata.pkl' --epoch 80 --from_begin --n_speakers 2
+    python train.py --wf -10 --wp -10 --data './data/iemocap/newdata.pkl' --from_begin --device=cuda --epochs=80 --batch_size=20 --n_speakers 2 
+
+## Predictioning networks 
+
+    python prediction.py --data=./data/iemocap/newdata.pkl --device=cuda --epochs=1 --batch_size=20 --n_speakers 2
+
 
 ## Performance Comparision
 
@@ -27,15 +31,18 @@ Original|IEMOCAP|70.22% | 70.12%
 
 ## Training networks 
 
-    python train.py --wf -10 --wp -10 --data './data/meld/newdata.pkl' --epoch 80 --from_begin --n_speakers 9
+    python train.py --wf -10 --wp -10 --data './data/meld/newdata.pkl' --device=cuda --epoch 80 --from_begin --batch_size=20 --n_speakers 9
+
+## Predictioning networks 
+
+    python prediction.py --data=./data/meld/newdata.pkl --device=cuda --epochs=1 --batch_size=20 --n_speakers 2
+
 
 ## Performance Comparision
 
 -|Dataset|Weighted F1(w) | Acc
 :-:|:-:|:-:
 Original|MELD|65.18% | 66.21%
-
-
 
 
 # Acknowledgments

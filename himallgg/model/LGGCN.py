@@ -62,7 +62,7 @@ class LGGCN(nn.Module):
         u_dim = 1024
         uA_dim = 1582
         uV_dim = 342
-        g_dim = 80
+        g_dim = 160
         h1_dim = 100
         h2_dim = 100
         hc_dim = 100
@@ -76,7 +76,7 @@ class LGGCN(nn.Module):
         self.rnn_A = ContextualEncoder(uA_dim, g_dim, args)
         self.rnn_V = ContextualEncoder(uV_dim, g_dim, args)
 
-        self.cross_attention = CrossModalAttention(80)
+        self.cross_attention = CrossModalAttention(g_dim)
         self.edge_att = EdgeAtt(g_dim, args)
        
         self.gcn = GCN(g_dim*3, h1_dim, h2_dim, args)

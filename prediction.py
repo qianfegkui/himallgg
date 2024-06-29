@@ -14,7 +14,7 @@ def main(args):
     log.info("Loaded data.")
     print(data.keys())
     testset = himallgg.Dataset(data["test"], args.batch_size)
-    model_file = "./save/IEMOCAP/model1diantest.pt"
+    model_file = "./save/IEMOCAP/model.pt"
     model = himallgg.LGGCN(args).to(args.device)
     pred = himallgg.Prediction(testset, model, args)
     ckpt = torch.load(model_file)
