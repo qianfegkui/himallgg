@@ -27,11 +27,6 @@ class SGCN(nn.Module):
         self.num_relations = 2 * args.n_speakers ** 2
         self.conv1 = TransformerConv(g_dim, h2_dim)
 
-        
-        
-        
-
-  
 
     def forward(self, node_features, edge_index, edge_norm, edge_type):
         # x = self.conv1(node_features, edge_index, edge_type, edge_norm=edge_norm)

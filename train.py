@@ -76,13 +76,6 @@ if __name__ == "__main__":
     parser.add_argument("--drop_rate", type=float, default=0.4,
                         help="Dropout rate.")
     
- 
-
-    
-    
-
-    
-    
 
     # Model parameters
     parser.add_argument("--wp", type=int, default=10,
